@@ -97,7 +97,6 @@
 - macOS 原生体验，极低内存占用
 - 前端 Terser 混淆压缩，Rust release profile 优化（LTO + strip symbols）
 <!-- CHANGELOG_END -->
-<!-- CHANGELOG_END -->
 
 查看完整更新日志：[CHANGELOG.md](CHANGELOG.md)
 
