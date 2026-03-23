@@ -1,0 +1,66 @@
+name: Update README Changelog
+
+on:
+  push:
+    paths:
+      - 'CHANGELOG.md'
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract latest 3 versions from CHANGELOG
+        run: |
+          # Extract the latest 3 version sections from CHANGELOG.md
+          # Each version starts with "## v"
+          python3 << 'EOF'
+          import re
+
+          with open('CHANGELOG.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # Split by version headers (## v...)
+          sections = re.split(r'(?=^## v)', content, flags=re.MULTILINE)
+
+          # Filter only version sections (starting with "## v")
+          versions = [s.strip() for s in sections if s.strip().startswith('## v')]
+
+          # Take the latest 3
+          latest = versions[:3]
+
+          # Convert ## to ### for embedding in README (since README uses ## for its own sections)
+          result = []
+          for v in latest:
+              converted = re.sub(r'^## (v\S+)', r'### \1', v, count=1)
+              result.append(converted)
+
+          changelog_text = '\n\n'.join(result)
+
+          # Read README
+          with open('README.md', 'r', encoding='utf-8') as f:
+              readme = f.read()
+
+          # Replace content between markers
+          pattern = r'(<!-- CHANGELOG_START -->)\n.*?\n(<!-- CHANGELOG_END -->)'
+          replacement = f'\\1\n{changelog_text}\n\\2'
+          new_readme = re.sub(pattern, replacement, readme, flags=re.DOTALL)
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_readme)
+
+          print(f"Updated README with {len(latest)} changelog entries")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || (git add README.md && git commit -m "docs: auto-update README changelog" && git push)
