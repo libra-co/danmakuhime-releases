@@ -9,6 +9,11 @@
 </p>
 
 <p align="center">
+  <a href="https://danmakuhime-6qjiqefw.manus.space"><strong>官网</strong></a> ·
+  <a href="https://danmakuhime-6qjiqefw.manus.space">下载</a>
+</p>
+
+<p align="center">
   <a href="https://github.com/libra-co/danmakuhime-releases/releases"><img src="https://img.shields.io/github/v/release/libra-co/danmakuhime-releases?style=flat-square&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC" alt="Release"></a>
   <a href="https://github.com/libra-co/danmakuhime-releases/releases"><img src="https://img.shields.io/github/downloads/libra-co/danmakuhime-releases/total?style=flat-square&label=%E4%B8%8B%E8%BD%BD%E9%87%8F" alt="Downloads"></a>
 </p>
@@ -120,7 +125,7 @@
 
 - B站：[@原来是Li哇](https://space.bilibili.com/26190537)
 - 直播间：[live.bilibili.com/4536023](https://live.bilibili.com/4536023)
-- 官网：[danmakuhime-8qjbmg8b.manus.space](https://danmakuhime-8qjbmg8b.manus.space)
+- 官网：[danmakuhime-6qjiqefw.manus.space](https://danmakuhime-6qjiqefw.manus.space)
 
 ---
 
