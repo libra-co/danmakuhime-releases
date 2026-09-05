@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "ws_auth": {
+    "protover": 3,
+    "platform": "web",
+    "conn_type": 2
+  }
+}
