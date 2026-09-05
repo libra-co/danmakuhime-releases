@@ -23,7 +23,7 @@
 ## 截图
 
 <p align="center">
-  <img src="screenshot.webp" alt="DanmakuHime 截图" width="800">
+  <img src="workspace-v0.3.0.png" alt="DanmakuHime v0.3.0 工作台（演示数据）" width="800">
 </p>
 
 ---
@@ -56,13 +56,9 @@
 
 ### 首次打开
 
-由于未进行 Apple 代码签名，首次打开时 macOS 可能会提示"无法验证开发者"。请按以下步骤操作：
-
-1. 打开 **系统设置 → 隐私与安全性**
-2. 在页面底部找到关于 DanmakuHime 的提示
-3. 点击 **"仍要打开"**
-
-之后即可正常使用。
+1. 按 Mac 芯片选择安装包：Apple Silicon 使用 `aarch64`，Intel 使用 `x86_64`。
+2. 打开 `.dmg`，将 DanmakuHime 拖入 **Applications（应用程序）** 文件夹。
+3. 从应用程序中打开弹幕姬，使用哔哩哔哩 App 扫码登录。
 
 ---
 
